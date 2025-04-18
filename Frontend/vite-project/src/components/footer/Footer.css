@@ -1,0 +1,17 @@
+.footer {
+  background-color: #000;
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.footer-logo {
+  height: 40px;
+  margin-bottom: 1rem;
+  filter: brightness(0) invert(1);
+}
+
+.footer-text {
+  font-size: 0.9rem;
+  color: #fff;
+}
