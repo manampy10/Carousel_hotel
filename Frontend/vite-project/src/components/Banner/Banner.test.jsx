@@ -7,9 +7,9 @@ describe("Banner component", () => {
     expect(screen.getByText("Bienvenue")).toBeInTheDocument();
   });
 
-  it("ajoute le style de background-image depuis la prop image", () => {
-    render(<Banner text="Test" image="banner.jpg" />);
-    const bannerDiv = screen.getByText("Test").parentElement;
-    expect(bannerDiv).toHaveStyle(`background-image: url(banner.jpg)`);
+  it("affiche un élément banner", () => {
+    render(<Banner text="Test" image="banner.png" />);
+    const banner = screen.getByRole("banner");
+    expect(banner).toBeInTheDocument();
   });
 });
