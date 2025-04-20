@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import React from "react";
 
 describe("Banner component (structure simulée)", () => {
   it("affiche le texte transmis via la prop `text`", () => {
