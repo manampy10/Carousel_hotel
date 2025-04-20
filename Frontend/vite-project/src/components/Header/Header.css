@@ -23,3 +23,46 @@
   font-weight: 500;
   position: relative;
 }
+
+/* ---------------------- TABLETTE --------------------- */
+@media screen and (max-width: 1024px) {
+  .logo {
+    height: 40px;
+  }
+  .header {
+    padding: 30px 50px;
+  }
+
+  .nav {
+    gap: 30px;
+  }
+
+  .nav a {
+    font-size: 20px;
+  }
+
+  .header-logo {
+    height: 55px;
+  }
+}
+/* MOBILE */
+@media screen and (max-width: 768px) {
+  .logo {
+    height: 30px;
+  }
+  .header {
+    padding: 20px;
+  }
+
+  .header-logo {
+    height: 45px;
+  }
+
+  .nav {
+    gap: 20px;
+  }
+
+  .nav a {
+    font-size: 16px;
+  }
+}
