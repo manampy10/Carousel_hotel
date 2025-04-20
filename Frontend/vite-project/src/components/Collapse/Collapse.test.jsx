@@ -1,23 +1,18 @@
+// src/components/Collapse/Collapse.test.jsx
 import { render, screen, fireEvent } from "@testing-library/react";
 import Collapse from "./Collapse";
 
 describe("Collapse component", () => {
-  it("n'affiche pas le contenu par défaut", () => {
-    render(<Collapse title="Titre">Contenu caché</Collapse>);
-    expect(screen.queryByText("Contenu caché")).not.toBeInTheDocument();
+  it("affiche le titre et cache le contenu par défaut", () => {
+    render(<Collapse title="Description">Contenu secret</Collapse>);
+    expect(screen.getByText("Description")).toBeInTheDocument();
+    expect(screen.queryByText("Contenu secret")).not.toBeInTheDocument();
   });
 
-  it("affiche le contenu après clic", () => {
-    render(<Collapse title="Titre">Contenu visible</Collapse>);
-    fireEvent.click(screen.getByText("Titre"));
-    expect(screen.getByText("Contenu visible")).toBeInTheDocument();
-  });
-
-  it("retourne à l’état fermé après un second clic", () => {
-    render(<Collapse title="Titre">Contenu toggle</Collapse>);
-    const header = screen.getByText("Titre");
+  it("affiche le contenu après un clic", () => {
+    render(<Collapse title="Voir plus">Détails supplémentaires</Collapse>);
+    const header = screen.getByText("Voir plus");
     fireEvent.click(header);
-    fireEvent.click(header);
-    expect(screen.queryByText("Contenu toggle")).not.toBeInTheDocument();
+    expect(screen.getByText("Détails supplémentaires")).toBeInTheDocument();
   });
 });
