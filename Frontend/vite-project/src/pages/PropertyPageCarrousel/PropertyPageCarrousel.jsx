@@ -1,8 +1,7 @@
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Slideshow from "../../components/Slideshow/Slideshow";
 import Collapse from "../../components/Collapse/Collapse";
-import ErrorPage from "../errorPage/ErrorPage";
 import "./PropertyPageCarrousel.css";
 
 function PropertyPageCarrousel() {
@@ -17,17 +16,14 @@ function PropertyPageCarrousel() {
         setProperty(found);
         console.log("ID:", id);
         console.log("Found property:", found);
+      })
+      .catch(() => {
+        setProperty(null);
       });
   }, [id]);
 
   if (!property) {
-    return (
-      <>
-        <div className="not-found">
-          <ErrorPage />
-        </div>
-      </>
-    );
+    return <Navigate to="/404" replace />;
   }
 
   return (
