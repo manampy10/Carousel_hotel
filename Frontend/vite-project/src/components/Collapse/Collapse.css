@@ -5,6 +5,7 @@
 }
 
 .collapse-header {
+  height: 30px;
   background-color: #ff6060;
   color: white;
   padding: 1rem 1.5rem;
@@ -44,5 +45,23 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+
+/* Mobile : max 768px */
+@media screen and (max-width: 768px) {
+  .collapse-header {
+    height: 30px;
+    background-color: #ff6060;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease;
   }
 }

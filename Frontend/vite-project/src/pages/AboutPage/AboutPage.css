@@ -14,3 +14,25 @@
   width: 100%;
   max-width: 800px;
 }
+
+/* Tablette*/
+@media screen and (max-width: 1024px) {
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 92%;
+  }
+}
+
+/* Mobile : max 768px */
+@media screen and (max-width: 768px) {
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 92%;
+  }
+}
