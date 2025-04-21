@@ -52,11 +52,22 @@
   .slideshow {
     height: 300px;
   }
+  .slide-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+  }
 }
 
 /* version mobile */
 @media screen and (max-width: 768px) {
   .slideshow {
     height: 255px;
+  }
+  .slide-image {
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
   }
 }

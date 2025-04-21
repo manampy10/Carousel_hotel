@@ -12,10 +12,13 @@
 }
 
 .property-page {
-  margin: 2rem 14%;
+  max-width: 1290px;
+  margin: 0 auto;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  box-sizing: border-box;
 }
 
 .property-top {
@@ -98,6 +101,10 @@ p {
     flex-direction: column;
   }
 
+  .property-page {
+    padding: 1rem;
+  }
+
   .property-collapse {
     grid-template-columns: 1fr;
   }
@@ -149,5 +156,15 @@ p {
   .stars {
     font-size: 2rem;
     text-align: left;
+  }
+
+  .property-page {
+    max-width: 1285px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    box-sizing: border-box;
   }
 }
