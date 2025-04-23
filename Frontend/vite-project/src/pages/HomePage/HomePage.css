@@ -28,9 +28,21 @@
   justify-content: center;
 }
 
+@media screen and (max-width: 1024px) {
+  .cards-wrapper {
+    width: 100%;
+    padding: 2rem 1rem;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .cards-wrapper {
+    width: 100%;
+    padding: 1.5rem 0.5rem;
     background-color: transparent;
-    padding: 1rem 0;
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr;
   }
 }
