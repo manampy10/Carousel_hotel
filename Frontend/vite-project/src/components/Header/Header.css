@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1240px;
+  max-width: 1300px;
   margin: 2rem auto 0;
   padding: 0 2rem;
 }
@@ -26,6 +26,13 @@
 
 /* ---------------------- TABLETTE --------------------- */
 @media screen and (max-width: 1024px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1350px;
+    padding: 0 1rem;
+  }
   .logo {
     height: 40px;
   }
@@ -52,7 +59,7 @@
     justify-content: space-between;
     align-items: center;
     max-width: 1350px;
-    padding: 0 2rem;
+    margin: 20px auto auto auto;
   }
 
   .header-logo {
