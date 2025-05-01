@@ -12,9 +12,9 @@
 }
 
 .property-page {
-  max-width: 1290px;
+  max-width: 1335px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   gap: 2rem;

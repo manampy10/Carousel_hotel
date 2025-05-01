@@ -1,25 +1,25 @@
+// Banner.test.jsx
 import { render, screen } from "@testing-library/react";
+import Banner from "./Banner";
 import React from "react";
 
-describe("Banner component (structure simulée)", () => {
+describe("Banner component", () => {
+  const mockImage = "test-image.jpg";
+
   it("affiche le texte transmis via la prop `text`", () => {
-    render(
-      <header role="banner">
-        <h1>Bienvenue</h1>
-        <img src="banner.jpg" alt="bannière" />
-      </header>
-    );
+    render(<Banner text="Bienvenue" image={mockImage} />);
     expect(screen.getByText("Bienvenue")).toBeInTheDocument();
   });
 
-  it("affiche un élément banner", () => {
-    render(
-      <header role="banner">
-        <h1>Test</h1>
-        <img src="banner.png" alt="bannière" />
-      </header>
-    );
-    const banner = screen.getByRole("banner");
-    expect(banner).toBeInTheDocument();
+  it("ajoute bien l'image en fond via les styles inline", () => {
+    const { container } = render(<Banner text="Titre" image={mockImage} />);
+    const bannerDiv = container.querySelector(".banner");
+    expect(bannerDiv).toHaveStyle(`background-image: url(${mockImage})`);
+  });
+
+  it("n'affiche pas de titre s’il n'y a pas de prop `text`", () => {
+    render(<Banner image={mockImage} />);
+    const heading = screen.queryByRole("heading");
+    expect(heading).not.toBeInTheDocument();
   });
 });

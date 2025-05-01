@@ -1,4 +1,4 @@
-// src/components/Collapse/Collapse.jsx
+import React from "react";
 import { useState } from "react";
 import "./Collapse.css";
 import arrowIcon from "../../images/arrowIcon.png";

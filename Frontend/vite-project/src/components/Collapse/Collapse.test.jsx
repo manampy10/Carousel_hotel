@@ -1,30 +1,30 @@
 import { render, screen, fireEvent } from "@testing-library/react";
+import Collapse from "./Collapse";
 import React from "react";
 
-describe("Collapse component (simulé)", () => {
-  function FakeCollapse({ title, children }) {
-    const [isOpen, setIsOpen] = React.useState(false);
-
-    return (
-      <div>
-        <div onClick={() => setIsOpen(!isOpen)}>{title}</div>
-        {isOpen && <div>{children}</div>}
-      </div>
-    );
-  }
-
-  it("affiche le titre et cache le contenu par défaut", () => {
-    render(<FakeCollapse title="Description">Contenu secret</FakeCollapse>);
+describe("Collapse component", () => {
+  it("affiche le titre transmis via la prop `title`", () => {
+    render(<Collapse title="Description">Contenu caché</Collapse>);
     expect(screen.getByText("Description")).toBeInTheDocument();
-    expect(screen.queryByText("Contenu secret")).not.toBeInTheDocument();
+  });
+
+  it("cache le contenu par défaut", () => {
+    render(<Collapse title="Description">Contenu caché</Collapse>);
+    expect(screen.queryByText("Contenu caché")).not.toBeInTheDocument();
   });
 
   it("affiche le contenu après un clic", () => {
-    render(
-      <FakeCollapse title="Voir plus">Détails supplémentaires</FakeCollapse>
-    );
-    const header = screen.getByText("Voir plus");
+    render(<Collapse title="Description">Contenu visible</Collapse>);
+    const header = screen.getByText("Description");
     fireEvent.click(header);
-    expect(screen.getByText("Détails supplémentaires")).toBeInTheDocument();
+    expect(screen.getByText("Contenu visible")).toBeInTheDocument();
+  });
+
+  it("cache à nouveau le contenu si on reclique", () => {
+    render(<Collapse title="Description">Contenu visible</Collapse>);
+    const header = screen.getByText("Description");
+    fireEvent.click(header);
+    fireEvent.click(header);
+    expect(screen.queryByText("Contenu visible")).not.toBeInTheDocument();
   });
 });
