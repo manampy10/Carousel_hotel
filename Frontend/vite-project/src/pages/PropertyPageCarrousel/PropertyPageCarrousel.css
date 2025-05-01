@@ -159,12 +159,35 @@ p {
   }
 
   .property-page {
-    max-width: 1285px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 10px;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 20px;
     box-sizing: border-box;
+  }
+  .property-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff6060;
+    margin-top: 0;
+  }
+  .property-location {
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+  }
+  .collapse-header {
+    height: 20px;
+    background-color: #ff6060;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease;
   }
 }

@@ -24,6 +24,11 @@
   position: relative;
 }
 
+.nav-link.active {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
 /* ---------------------- TABLETTE --------------------- */
 @media screen and (max-width: 1024px) {
   .header {
@@ -59,7 +64,7 @@
     justify-content: space-between;
     align-items: center;
     max-width: 1350px;
-    margin: 20px auto auto auto;
+    margin: 20px auto 20px auto;
   }
 
   .header-logo {
@@ -71,6 +76,19 @@
   }
 
   .nav a {
-    font-size: 16px;
+    font-size: 12px;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: #000;
+    font-size: 12px;
+    font-weight: 500;
+    position: relative;
+  }
+  .nav-link.active {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-transform: uppercase;
   }
 }
