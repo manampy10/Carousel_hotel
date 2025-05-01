@@ -7,12 +7,16 @@ describe("Banner component", () => {
   const mockImage = "test-image.jpg";
 
   it("affiche le texte transmis via la prop `text`", () => {
-    render(<Banner text="Bienvenue" image={mockImage} />);
-    expect(screen.getByText("Bienvenue")).toBeInTheDocument();
+    render(<Banner text="Chez vous, partout et ailleurs" image={mockImage} />);
+    expect(
+      screen.getByText("Chez vous, partout et ailleurs")
+    ).toBeInTheDocument();
   });
 
   it("ajoute bien l'image en fond via les styles inline", () => {
-    const { container } = render(<Banner text="Titre" image={mockImage} />);
+    const { container } = render(
+      <Banner text="Chez vous, partout et ailleurs" image={mockImage} />
+    );
     const bannerDiv = container.querySelector(".banner");
     expect(bannerDiv).toHaveStyle(`background-image: url(${mockImage})`);
   });
